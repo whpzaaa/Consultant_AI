@@ -7,6 +7,7 @@ import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.V;
 import dev.langchain4j.service.spring.AiService;
 import dev.langchain4j.service.spring.AiServiceWiringMode;
+import org.example.consultant.tools.ReservationTool;
 import reactor.core.publisher.Flux;
 
 @AiService(
@@ -15,7 +16,8 @@ import reactor.core.publisher.Flux;
         streamingChatModel = "openAiStreamingChatModel",
         //chatMemory = "chatMemory"
         chatMemoryProvider = "chatMemoryProvider",
-        contentRetriever = "embeddingStoreContentRetriever"
+        contentRetriever = "embeddingStoreContentRetriever",
+        tools = "reservationTool"
 )
 //@AiService
 public interface ConsultantService {
